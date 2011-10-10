@@ -193,12 +193,11 @@
 
 -(NSMutableArray *)getAllItemsByCategory:(NSString*)category {
     NSMutableArray *categoryArray = [[NSMutableArray alloc] init];
-    NSMutableArray *itemArray;
-    NSNumber *itemID = [NSNumber alloc];
+    NSNumber *itemID;
     NSString *itemLabel;
     NSString *itemCategory;
-    NSNumber *itemLatitude = [NSNumber alloc];
-    NSNumber *itemLongitude = [NSNumber alloc];
+    NSNumber *itemLatitude;
+    NSNumber *itemLongitude;
     NSString *itemDate;
     sqlite3 *dbPointer = [self getNewDBConnection];
     sqlite3_stmt *statement = nil;
@@ -208,6 +207,8 @@
     
     if (sqlite3_prepare_v2(dbPointer, query_stmt, -1, &statement, NULL) != SQLITE_OK) {
         NSLog(@"Error preparing statement /getLastIDNumber/ %s", sqlite3_errmsg(dbPointer));
+        [categoryArray release];
+        return nil;
     } else {
         while(sqlite3_step(statement) == SQLITE_ROW) {
             itemID = [NSNumber numberWithInt:sqlite3_column_int(statement, 0)];
@@ -217,15 +218,13 @@
             itemLongitude = [NSNumber numberWithFloat:(float)sqlite3_column_double(statement, 4)];
             itemDate = [NSString stringWithUTF8String:(const char *)sqlite3_column_text(statement, 5)];
             
-            itemArray = [[NSMutableArray alloc] initWithObjects:itemID, itemLabel, itemCategory, itemLatitude, itemLongitude, itemDate, nil];
-            [categoryArray addObject:itemArray];
+            [categoryArray addObject:[NSMutableArray arrayWithObjects:itemID, itemLabel, itemCategory, itemLatitude, itemLongitude, itemDate, nil]];
         }
+        sqlite3_finalize(statement);
+        sqlite3_close(dbPointer);
+        dbPointer = nil;
+        return categoryArray;
     }
-    
-    sqlite3_finalize(statement);
-    sqlite3_close(dbPointer);
-
-    return categoryArray;
 }
 
 -(BOOL)deleteItemWithID:(NSNumber *)ID {
@@ -249,6 +248,10 @@
     sqlite3_close(dbPointer);
     
     return success; 
+}
+
+-(void)dealloc {
+    [super dealloc];
 }
 
 @end

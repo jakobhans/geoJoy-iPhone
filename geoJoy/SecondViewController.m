@@ -10,6 +10,9 @@
 
 @implementation SecondViewController
 
+@synthesize pickerValue, geoItemsCount, categoriesCount;
+@synthesize categories;
+@synthesize categoriesTitles, itemsData, selectedItem;
 @synthesize detailsView, theTableView, detailsEditView, detailsMapView;
 @synthesize itemsCountLabel;
 @synthesize generalEditButton, backToList;
@@ -19,6 +22,7 @@
 @synthesize detailMap;
 @synthesize editCategoriesPicker;
 @synthesize CLControllerSecondView;
+@synthesize model;
 
 -(void)textFieldFinished:(id)sender {
     [sender resignFirstResponder];
@@ -98,29 +102,30 @@
 
 -(void)loadTableData {
     // Getting Categories Count
-    categoriesCount = [[dbModel alloc]getCategoriesNumber:categories];
+    categoriesCount = [model getCategoriesNumber:categories];
     
     // Getting Categories Titles that have at least one item each
     categoriesTitles = [[NSMutableArray arrayWithCapacity:categoriesCount] retain];
     for (NSString *category in categories) {
-        int categoryCount = [[dbModel alloc] getItemsCountByCategory:category];
+        int categoryCount = [model getItemsCountByCategory:category];
         if (categoryCount > 0) {
             [categoriesTitles addObject:category];
         }
     }
     
     // Getting item's data by Category
-    itemsData = [[[NSMutableArray alloc] init] autorelease];
-    NSMutableArray *sectionData = [[NSMutableArray alloc] init];
+    itemsData = [[NSMutableArray alloc] init];
+    NSMutableArray *sectionData;
     for (NSString *category in categoriesTitles) {
-        sectionData = [NSMutableArray arrayWithArray:[[dbModel alloc] getAllItemsByCategory:category]];
+        sectionData = [[NSMutableArray alloc] initWithArray:[model getAllItemsByCategory:category]];
         [itemsData addObject:sectionData];
+        [sectionData release];
     }
     [itemsData retain];
 }
 
 -(void)reloadItemsCounter {
-    geoItemsCount = [[dbModel alloc] getNumberOfItemsInTable];
+    geoItemsCount = [model getNumberOfItemsInTable];
     NSString *labelMessage;
     if (geoItemsCount == 0) {
         itemsTable.hidden = YES;
@@ -141,13 +146,13 @@
 }
 
 -(IBAction)saveEditedItem {
-    BOOL itemUpdateDB = [[dbModel alloc] updateItemWithID:[selectedItem objectAtIndex:0] toName:editItemLabel.text andCategory:pickerString];
-    if (itemUpdateDB == YES) {
+    if ([model updateItemWithID:[selectedItem objectAtIndex:0] toName:editItemLabel.text andCategory:pickerString] == YES) {
         [self loadTableData];
         [itemsTable reloadData];
         [self toggleWithinDetailsMapWithEdit];
         [self toggleTableWithDetails];
     }
+    
 }
 
 -(IBAction)editButtonPressed {
@@ -205,7 +210,6 @@
 // End Map Stuff
 
 -(void)loadItemsDataInDetails {
-    
     NSMutableArray *presentAnnotations = [NSMutableArray arrayWithArray:[detailMap annotations]];
     for (MKPinAnnotationView *annotation in presentAnnotations) {
         if ([annotation isKindOfClass:[MKUserLocation class]]) {
@@ -218,7 +222,6 @@
     [self toggleTableWithDetails];
     
     MKCoordinateRegion mapRegion;
-    annotationsController *itemLocationPin = [[annotationsController alloc] retain];
     CLLocationCoordinate2D itemCoordinates;
     
     itemCoordinates.latitude = (CLLocationDegrees)[[selectedItem objectAtIndex:3] doubleValue];
@@ -230,9 +233,11 @@
     
     [detailMap setRegion:mapRegion];
     
-    [itemLocationPin initWithTitle:[selectedItem objectAtIndex:1] subtitle:[selectedItem objectAtIndex:2] coordinate:itemCoordinates];
+    annotationsController *itemLocationPin = [[annotationsController alloc] initWithTitle:[selectedItem objectAtIndex:1] subtitle:[selectedItem objectAtIndex:2] coordinate:itemCoordinates];
     
     [detailMap addAnnotation:itemLocationPin];
+    
+    [itemLocationPin release];
 }
 
 // Table Stuff
@@ -284,8 +289,7 @@
     {
         
         NSNumber *itemID = [[[itemsData objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] objectAtIndex:0];
-        BOOL querySuccess = [[dbModel alloc] deleteItemWithID:itemID];
-        if (querySuccess == YES) {
+        if ([model deleteItemWithID:itemID] == YES) {
             [[itemsData objectAtIndex:indexPath.section] removeObjectAtIndex:indexPath.row];
             [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationRight];
             if ([[itemsData objectAtIndex:indexPath.section] count] == 0) {
@@ -338,10 +342,12 @@
 -(void)viewWillAppear:(BOOL)animated {
     [self reloadItemsCounter];
     
+    [itemsTable reloadData];
+    
     UIView *tableBottomSpace = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 1, 1)];
     itemsTable.tableFooterView = tableBottomSpace;
     
-    [itemsTable reloadData];
+    [tableBottomSpace release];
     
     [CLControllerSecondView.locMgr startUpdatingLocation];
     
@@ -364,6 +370,7 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
+    model = [[dbModel alloc] init];
     
     tableViewIsOnTop = YES;
     withinDetailsMapIsOnTop = YES;
@@ -394,6 +401,10 @@
 
 
 -(void)dealloc {
+    [categories release];
+    [categoriesTitles release];
+    [itemsData release];
+    [selectedItem release];
     [detailsView release];
     [detailsMapView release];
     [detailsEditView release];
@@ -402,12 +413,12 @@
     [backToList release];
     [editItemLabel release];
     [editSaveItem release];
-    [categories release];
     [itemsCountLabel release];
     [itemsTable release];
     [detailMap release];
     [editCategoriesPicker release];
     [CLControllerSecondView release];
+    [model release];
     [super dealloc];
 }
 

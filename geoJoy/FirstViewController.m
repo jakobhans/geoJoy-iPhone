@@ -39,17 +39,20 @@
 
 -(void)loadDbAddLocation {
     [self showLoadingViewWithText:@"Saving item..."];
-    if ([[dbModel alloc] addNewItemWithName:itemLabel.text latitude:positionToBeSaved.coordinate.latitude longitude:positionToBeSaved.coordinate.longitude category:pickerString] == YES) {
+    dbModel *model = [[dbModel alloc] init];
+    if ([model addNewItemWithName:itemLabel.text latitude:positionToBeSaved.coordinate.latitude longitude:positionToBeSaved.coordinate.longitude category:pickerString] == YES) {
         loadingViewText.text = @"Item saved!";
         
         [categoriesPicker selectRow:0 inComponent:0 animated:NO];
         itemLabel.text = @"";
-        
     } else {
-        UIAlertView *alertDialog = [[[UIAlertView alloc] initWithTitle:@"Whoops!" message:@"There was a problem adding your location." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] retain];
+        UIAlertView *alertDialog = [[UIAlertView alloc] initWithTitle:@"Whoops!" message:@"There was a problem adding your location." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
         [alertDialog show];
         [alertDialog release];
     }
+    
+    [model release];
+    
     [self dissapearLoadingView];
 }
 

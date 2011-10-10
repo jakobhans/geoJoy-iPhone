@@ -32,6 +32,7 @@
     IBOutlet MKMapView *detailMap;
     CLLocationController *CLControllerSecondView;
     
+    dbModel *model;
     NSString *pickerString;
     int pickerValue;
     int geoItemsCount;
@@ -45,6 +46,9 @@
     BOOL editingTable;
 }
 
+@property (nonatomic, readwrite) int pickerValue, geoItemsCount, categoriesCount;
+@property (nonatomic, retain) NSArray *categories;
+@property (nonatomic, retain) NSMutableArray *categoriesTitles, *itemsData, *selectedItem;
 @property (nonatomic, retain) UIView *detailsView, *theTableView, *detailsMapView, *detailsEditView;
 @property (nonatomic, retain) UILabel *itemsCountLabel;
 @property (nonatomic, retain) UIBarButtonItem *generalEditButton, *backToList;
@@ -54,6 +58,7 @@
 @property (nonatomic, retain) MKMapView *detailMap;
 @property (nonatomic, retain) UIPickerView *editCategoriesPicker;
 @property (nonatomic, retain) CLLocationController *CLControllerSecondView;
+@property (nonatomic, retain) dbModel *model;
 
 -(IBAction)saveEditedItem;
 -(IBAction)editButtonPressed;
