@@ -105,7 +105,7 @@
     categoriesCount = [model getCategoriesNumber:categories];
     
     // Getting Categories Titles that have at least one item each
-    categoriesTitles = [[NSMutableArray arrayWithCapacity:categoriesCount] retain];
+    categoriesTitles = [[NSMutableArray alloc] initWithCapacity:categoriesCount];
     for (NSString *category in categories) {
         int categoryCount = [model getItemsCountByCategory:category];
         if (categoryCount > 0) {
@@ -192,14 +192,14 @@
 // Start Map Stuff
 
 -(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
-    MKPinAnnotationView *pinDrop = (MKPinAnnotationView *)[detailMap dequeueReusableAnnotationViewWithIdentifier:@"currentItem"];
+    [detailMap dequeueReusableAnnotationViewWithIdentifier:@"currentItem"];
     
     if ([annotation isKindOfClass:[MKUserLocation class]]) {
         MKPinAnnotationView *userLocation = (MKPinAnnotationView *)[detailMap dequeueReusableAnnotationViewWithIdentifier:@"userLocationForItem"];
         return userLocation;
     }
     
-    pinDrop = [[[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"currentItem"] autorelease];
+    MKPinAnnotationView *pinDrop = [[[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"currentItem"] autorelease];
     pinDrop.pinColor = MKPinAnnotationColorPurple;
     pinDrop.canShowCallout = YES;
     pinDrop.animatesDrop = YES;

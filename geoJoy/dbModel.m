@@ -211,6 +211,7 @@
         return nil;
     } else {
         while(sqlite3_step(statement) == SQLITE_ROW) {
+            
             itemID = [NSNumber numberWithInt:sqlite3_column_int(statement, 0)];
             itemLabel = [NSString stringWithUTF8String:(const char *)sqlite3_column_text(statement, 1)];
             itemCategory = [NSString stringWithUTF8String:(const char *)sqlite3_column_text(statement, 2)];
@@ -218,12 +219,15 @@
             itemLongitude = [NSNumber numberWithFloat:(float)sqlite3_column_double(statement, 4)];
             itemDate = [NSString stringWithUTF8String:(const char *)sqlite3_column_text(statement, 5)];
             
-            [categoryArray addObject:[NSMutableArray arrayWithObjects:itemID, itemLabel, itemCategory, itemLatitude, itemLongitude, itemDate, nil]];
+            NSArray *itemData = [[NSArray alloc] initWithObjects:itemID, itemLabel, itemCategory, itemLatitude, itemLongitude, itemDate, nil];
+            
+            [categoryArray addObject:itemData];
+            [itemData release];
         }
         sqlite3_finalize(statement);
         sqlite3_close(dbPointer);
         dbPointer = nil;
-        return categoryArray;
+        return [categoryArray autorelease];
     }
 }
 
