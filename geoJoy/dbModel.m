@@ -3,7 +3,7 @@
 //  geoJoy
 //
 //  Created by Jakob Hans Renpening on 24/09/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Copyright 2011 Claim Soluciones, S.C.P. All rights reserved.
 //
 
 #import "dbModel.h"
