@@ -9,9 +9,11 @@
 /* Begin PBXBuildFile section */
 		4206A136142DE9AE0023DBB0 /* dbModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4206A135142DE9AE0023DBB0 /* dbModel.m */; };
 		421D9ABF1435DF5000ABA55D /* logoClaim.png in Resources */ = {isa = PBXBuildFile; fileRef = 421D9ABE1435DF5000ABA55D /* logoClaim.png */; };
+		424853CE14443C5500622402 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 424853CD14443C5500622402 /* Reachability.m */; };
+		424853D114443DD800622402 /* ConnectedClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 424853D014443DD800622402 /* ConnectedClass.m */; };
+		424853D214443DEA00622402 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 426A1933143CD50E00CD1A1F /* SystemConfiguration.framework */; };
 		42668AB71434CDAC0084C261 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 42668AB61434CDAC0084C261 /* icon@2x.png */; };
 		42668AB91434CDBE0084C261 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 42668AB81434CDBE0084C261 /* Icon.png */; };
-		426A1934143CD50E00CD1A1F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 426A1933143CD50E00CD1A1F /* SystemConfiguration.framework */; };
 		426E268D14052BFC00C47A26 /* bookmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 426E268B14052BFC00C47A26 /* bookmark.png */; };
 		426E268E14052BFC00C47A26 /* bookmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 426E268C14052BFC00C47A26 /* bookmark@2x.png */; };
 		4270BB4F142F41EB00A39CC0 /* position.png in Resources */ = {isa = PBXBuildFile; fileRef = 4270BB4D142F41EB00A39CC0 /* position.png */; };
@@ -32,13 +34,6 @@
 		42C589EF1402C9D2005D259D /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C589EE1402C9D2005D259D /* SecondViewController.m */; };
 		42C589F21402C9D2005D259D /* FirstView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42C589F01402C9D2005D259D /* FirstView.xib */; };
 		42C589F51402C9D2005D259D /* SecondView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42C589F31402C9D2005D259D /* SecondView.xib */; };
-		42C589FD1402C9D2005D259D /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42C589FC1402C9D2005D259D /* SenTestingKit.framework */; };
-		42C589FE1402C9D2005D259D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42C589D51402C9D2005D259D /* UIKit.framework */; };
-		42C589FF1402C9D2005D259D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42C589D71402C9D2005D259D /* Foundation.framework */; };
-		42C58A001402C9D2005D259D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42C589D91402C9D2005D259D /* CoreGraphics.framework */; };
-		42C58A081402C9D2005D259D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 42C58A061402C9D2005D259D /* InfoPlist.strings */; };
-		42C58A0A1402C9D2005D259D /* geoJoyTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 42C58A091402C9D2005D259D /* geoJoyTests.h */; };
-		42C58A0C1402C9D2005D259D /* geoJoyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C58A0B1402C9D2005D259D /* geoJoyTests.m */; };
 		42C58A161402C9E9005D259D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42C58A151402C9E9005D259D /* CoreLocation.framework */; };
 		42C58A181402C9F0005D259D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42C58A171402C9F0005D259D /* MapKit.framework */; };
 		42C58A1C1402CA42005D259D /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C58A1A1402CA42005D259D /* ThirdViewController.m */; };
@@ -48,20 +43,14 @@
 		42FB0AB8142CDE0600E79FD9 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 42FB0AB7142CDE0600E79FD9 /* libsqlite3.0.dylib */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		42C58A011402C9D2005D259D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 42C589C81402C9D2005D259D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 42C589D01402C9D2005D259D;
-			remoteInfo = geoJoy;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		4206A134142DE9AE0023DBB0 /* dbModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dbModel.h; sourceTree = "<group>"; };
 		4206A135142DE9AE0023DBB0 /* dbModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dbModel.m; sourceTree = "<group>"; };
 		421D9ABE1435DF5000ABA55D /* logoClaim.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logoClaim.png; sourceTree = "<group>"; };
+		424853CC14443C5500622402 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		424853CD14443C5500622402 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		424853CF14443DD800622402 /* ConnectedClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectedClass.h; sourceTree = "<group>"; };
+		424853D014443DD800622402 /* ConnectedClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectedClass.m; sourceTree = "<group>"; };
 		42668AB61434CDAC0084C261 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "../icon@2x.png"; sourceTree = "<group>"; };
 		42668AB81434CDBE0084C261 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../Icon.png; sourceTree = "<group>"; };
 		426A1933143CD50E00CD1A1F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -91,7 +80,6 @@
 		42C589EE1402C9D2005D259D /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		42C589F11402C9D2005D259D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FirstView.xib; sourceTree = "<group>"; };
 		42C589F41402C9D2005D259D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SecondView.xib; sourceTree = "<group>"; };
-		42C589FB1402C9D2005D259D /* geoJoyTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = geoJoyTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		42C589FC1402C9D2005D259D /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		42C58A051402C9D2005D259D /* geoJoyTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "geoJoyTests-Info.plist"; sourceTree = "<group>"; };
 		42C58A071402C9D2005D259D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -114,7 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				426A1934143CD50E00CD1A1F /* SystemConfiguration.framework in Frameworks */,
+				424853D214443DEA00622402 /* SystemConfiguration.framework in Frameworks */,
 				42FB0AB8142CDE0600E79FD9 /* libsqlite3.0.dylib in Frameworks */,
 				42C58A181402C9F0005D259D /* MapKit.framework in Frameworks */,
 				42C58A161402C9E9005D259D /* CoreLocation.framework in Frameworks */,
@@ -124,29 +112,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		42C589F71402C9D2005D259D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				42C589FD1402C9D2005D259D /* SenTestingKit.framework in Frameworks */,
-				42C589FE1402C9D2005D259D /* UIKit.framework in Frameworks */,
-				42C589FF1402C9D2005D259D /* Foundation.framework in Frameworks */,
-				42C58A001402C9D2005D259D /* CoreGraphics.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		4206A137142DE9B60023DBB0 /* General Classes */ = {
 			isa = PBXGroup;
 			children = (
+				424853CC14443C5500622402 /* Reachability.h */,
+				424853CD14443C5500622402 /* Reachability.m */,
 				4206A134142DE9AE0023DBB0 /* dbModel.h */,
 				4206A135142DE9AE0023DBB0 /* dbModel.m */,
 				42CFDC2B142E836D00ABC9C8 /* CLLocationController.h */,
 				42CFDC2C142E836D00ABC9C8 /* CLLocationController.m */,
 				42CFDC28142E825300ABC9C8 /* annotationsController.h */,
 				42CFDC29142E825300ABC9C8 /* annotationsController.m */,
+				424853CF14443DD800622402 /* ConnectedClass.h */,
+				424853D014443DD800622402 /* ConnectedClass.m */,
 			);
 			name = "General Classes";
 			sourceTree = "<group>";
@@ -169,7 +150,6 @@
 			isa = PBXGroup;
 			children = (
 				42C589D11402C9D2005D259D /* geoJoy.app */,
-				42C589FB1402C9D2005D259D /* geoJoyTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -268,25 +248,6 @@
 			productReference = 42C589D11402C9D2005D259D /* geoJoy.app */;
 			productType = "com.apple.product-type.application";
 		};
-		42C589FA1402C9D2005D259D /* geoJoyTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 42C58A121402C9D2005D259D /* Build configuration list for PBXNativeTarget "geoJoyTests" */;
-			buildPhases = (
-				42C589F61402C9D2005D259D /* Sources */,
-				42C589F71402C9D2005D259D /* Frameworks */,
-				42C589F81402C9D2005D259D /* Resources */,
-				42C589F91402C9D2005D259D /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				42C58A021402C9D2005D259D /* PBXTargetDependency */,
-			);
-			name = geoJoyTests;
-			productName = geoJoyTests;
-			productReference = 42C589FB1402C9D2005D259D /* geoJoyTests.octest */;
-			productType = "com.apple.product-type.bundle";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -308,7 +269,6 @@
 			projectRoot = "";
 			targets = (
 				42C589D01402C9D2005D259D /* geoJoy */,
-				42C589FA1402C9D2005D259D /* geoJoyTests */,
 			);
 		};
 /* End PBXProject section */
@@ -338,32 +298,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		42C589F81402C9D2005D259D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				42C58A081402C9D2005D259D /* InfoPlist.strings in Resources */,
-				42C58A0A1402C9D2005D259D /* geoJoyTests.h in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		42C589F91402C9D2005D259D /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		42C589CD1402C9D2005D259D /* Sources */ = {
@@ -378,26 +313,12 @@
 				4206A136142DE9AE0023DBB0 /* dbModel.m in Sources */,
 				42CFDC2A142E825300ABC9C8 /* annotationsController.m in Sources */,
 				42CFDC2D142E836D00ABC9C8 /* CLLocationController.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		42C589F61402C9D2005D259D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				42C58A0C1402C9D2005D259D /* geoJoyTests.m in Sources */,
+				424853CE14443C5500622402 /* Reachability.m in Sources */,
+				424853D114443DD800622402 /* ConnectedClass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		42C58A021402C9D2005D259D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 42C589D01402C9D2005D259D /* geoJoy */;
-			targetProxy = 42C58A011402C9D2005D259D /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		42C589DE1402C9D2005D259D /* InfoPlist.strings */ = {
@@ -448,6 +369,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -462,8 +384,11 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
+				SKIP_INSTALL = NO;
 			};
 			name = Debug;
 		};
@@ -472,16 +397,20 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -495,6 +424,7 @@
 				INFOPLIST_FILE = "geoJoy/geoJoy-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = NO;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -509,44 +439,9 @@
 				INFOPLIST_FILE = "geoJoy/geoJoy-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = NO;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		42C58A131402C9D2005D259D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/geoJoy.app/geoJoy";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "geoJoy/geoJoy-Prefix.pch";
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				INFOPLIST_FILE = "geoJoyTests/geoJoyTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Debug;
-		};
-		42C58A141402C9D2005D259D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/geoJoy.app/geoJoy";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "geoJoy/geoJoy-Prefix.pch";
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				INFOPLIST_FILE = "geoJoyTests/geoJoyTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};
@@ -567,15 +462,6 @@
 			buildConfigurations = (
 				42C58A101402C9D2005D259D /* Debug */,
 				42C58A111402C9D2005D259D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		42C58A121402C9D2005D259D /* Build configuration list for PBXNativeTarget "geoJoyTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				42C58A131402C9D2005D259D /* Debug */,
-				42C58A141402C9D2005D259D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -14,11 +14,11 @@
 		<string>Icon.png</string>
 	</array>
 	<key>CFBundleIdentifier</key>
-	<string>claimsoluciones.${PRODUCT_NAME:rfc1034identifier}</string>
+	<string>claimsoluciones.geojoy</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>${PRODUCT_NAME}</string>
+	<string>geojoy</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
@@ -35,9 +35,14 @@
 	<string>MainWindow</string>
 	<key>UIPrerenderedIcon</key>
 	<true/>
+	<key>UIRequiredDeviceCapabilities</key>
+	<array>
+		<string>location-services</string>
+	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
 </dict>
 </plist>
