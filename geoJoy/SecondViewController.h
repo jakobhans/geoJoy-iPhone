@@ -11,6 +11,7 @@
 #import "annotationsController.h"
 #import "dbModel.h"
 #import "CLLocationController.h"
+#import "ConnectedClass.h"
 
 @interface SecondViewController : UIViewController <MKMapViewDelegate, UITableViewDelegate, UITableViewDataSource, UIPickerViewDataSource, UIPickerViewDelegate, CLLocationManagerDelegate> {
     

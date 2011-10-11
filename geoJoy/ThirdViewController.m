@@ -10,6 +10,18 @@
 
 @implementation ThirdViewController
 
+-(void)checkForConnection {
+    ConnectedClass *connection = [[ConnectedClass alloc] init];
+    
+    if ([connection connected] == NO) {
+        UIAlertView *alertDialog = [[UIAlertView alloc] initWithTitle:@"Internet Connection" message:@"This application needs an internet connection to work properly. Please activate either a WiFi or a cellular data connection." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        [alertDialog show];
+        [alertDialog release];
+    }
+    
+    [connection release];
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -36,6 +48,10 @@
 }
 
 #pragma mark - View lifecycle
+
+-(void)viewWillAppear:(BOOL)animated {
+    [self checkForConnection];
+}
 
 - (void)viewDidLoad
 {

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ConnectedClass.h"
 
 @interface ThirdViewController : UIViewController
 

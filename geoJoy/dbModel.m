@@ -219,10 +219,9 @@
             itemLongitude = [NSNumber numberWithFloat:(float)sqlite3_column_double(statement, 4)];
             itemDate = [NSString stringWithUTF8String:(const char *)sqlite3_column_text(statement, 5)];
             
-            NSArray *itemData = [[NSArray alloc] initWithObjects:itemID, itemLabel, itemCategory, itemLatitude, itemLongitude, itemDate, nil];
+            NSArray *itemData = [NSArray arrayWithObjects:itemID, itemLabel, itemCategory, itemLatitude, itemLongitude, itemDate, nil];
             
             [categoryArray addObject:itemData];
-            [itemData release];
         }
         sqlite3_finalize(statement);
         sqlite3_close(dbPointer);

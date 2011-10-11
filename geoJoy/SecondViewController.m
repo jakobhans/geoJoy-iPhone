@@ -24,6 +24,18 @@
 @synthesize CLControllerSecondView;
 @synthesize model;
 
+-(void)checkForConnection {
+    ConnectedClass *connection = [[ConnectedClass alloc] init];
+    
+    if ([connection connected] == NO) {
+        UIAlertView *alertDialog = [[UIAlertView alloc] initWithTitle:@"Internet Connection" message:@"This application needs an internet connection to work properly. Please activate either a WiFi or a cellular data connection." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        [alertDialog show];
+        [alertDialog release];
+    }
+    
+    [connection release];
+}
+
 -(void)textFieldFinished:(id)sender {
     [sender resignFirstResponder];
 }
@@ -83,6 +95,7 @@
         [CLControllerSecondView.locMgr stopUpdatingLocation];
         
     } else {
+        
         backToList.enabled = YES;
         tableViewIsOnTop = NO;
         
@@ -93,6 +106,7 @@
         [UIView commitAnimations];
         
         [CLControllerSecondView.locMgr startUpdatingLocation];
+        
     }
 }
 
@@ -275,7 +289,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    selectedItem = [[NSMutableArray alloc] initWithArray:[[itemsData objectAtIndex:indexPath.section] objectAtIndex:indexPath.row]];
+    if (selectedItem != nil) {
+        [selectedItem removeAllObjects];
+        selectedItem = [[NSMutableArray arrayWithArray:[[itemsData objectAtIndex:indexPath.section] objectAtIndex:indexPath.row]] retain];
+    } else {
+        selectedItem = [[NSMutableArray alloc] initWithArray:[[itemsData objectAtIndex:indexPath.section] objectAtIndex:indexPath.row]];
+    }
     
     [self loadItemsDataInDetails];
 }
@@ -359,6 +378,8 @@
         [self toggleTableWithDetails];
     }
     
+    [self checkForConnection];
+    
     [super viewWillAppear:animated];
 }
 
@@ -392,7 +413,14 @@
 
 - (void)viewDidUnload
 {
-    [CLControllerSecondView.locMgr stopUpdatingLocation];
+    [CLControllerSecondView release];
+    [model release];
+    
+    self.theTableView = nil;
+    self.detailsView = nil;
+    self.detailsMapView = nil;
+    self.detailsEditView = nil;
+    
     [super viewDidUnload];
 
     // Release any retained subviews of the main view.

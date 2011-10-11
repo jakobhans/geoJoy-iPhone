@@ -18,8 +18,21 @@
 @synthesize map;
 @synthesize positionToBeSaved;
 @synthesize CLController;
+@synthesize model;
 
 // Custom, private functions in the backend
+
+-(void)checkForConnection {
+    ConnectedClass *connection = [[ConnectedClass alloc] init];
+    
+    if ([connection connected] == NO) {
+        UIAlertView *alertDialog = [[UIAlertView alloc] initWithTitle:@"Internet Connection" message:@"This application requires an internet connection to work properly. Please activate either a WiFi or a cellular data connection." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        [alertDialog show];
+        [alertDialog release];
+    }
+    
+    [connection release];
+}
 
 -(void)showLoadingViewWithText:(NSString *)text {
     loadingViewText.text = text;
@@ -39,7 +52,6 @@
 
 -(void)loadDbAddLocation {
     [self showLoadingViewWithText:@"Saving item..."];
-    dbModel *model = [[dbModel alloc] init];
     if ([model addNewItemWithName:itemLabel.text latitude:positionToBeSaved.coordinate.latitude longitude:positionToBeSaved.coordinate.longitude category:pickerString] == YES) {
         loadingViewText.text = @"Item saved!";
         
@@ -50,8 +62,6 @@
         [alertDialog show];
         [alertDialog release];
     }
-    
-    [model release];
     
     [self dissapearLoadingView];
 }
@@ -167,42 +177,21 @@
     
     [self dissapearLoadingView];
     
+    NSString *errorMessage;
+    
     if (error.code == kCLErrorDenied) {
-        NSLog(@"kCLErrorDenied: User denied location services.");
+        errorMessage = @"The application needs location services to work properly. They are currently disabled for geoJoy.";
     } else if (error.code == kCLErrorLocationUnknown) {
-        NSLog(@"kCLErrorLocationUnknown: Unable to obtain location value.");
+        errorMessage = @"There has been a problem while trying to get your location. Please try again.";
     } else if (error.code == kCLErrorNetwork) {
-        NSLog(@"kCLErrorNetwork: Network error or unavailable.");
+        errorMessage = @"The location device has returned an error of unavailable or disabled network. Please make sure your location device is working properly.";
     } else {
-        NSLog(@"Error unknown: %@", [error localizedDescription]);
+        errorMessage = @"There has been an unknown error while trying to get your location. Please try again.";
     }
     
-    alertDialog = [[UIAlertView alloc] initWithTitle:@"Our mistake" message:@"There has been a problem while trying to get your location." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+    alertDialog = [[UIAlertView alloc] initWithTitle:@"Location Error" message:errorMessage delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
     [alertDialog show];
     [alertDialog release];
-}
-
-
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad {
-    [self showLoadingViewWithText:@"Locating..."];
-    [self.itemLabel setReturnKeyType:UIReturnKeyDone];
-    [self.itemLabel addTarget:self
-                       action:@selector(textFieldFinished:)
-             forControlEvents:UIControlEventEditingDidEndOnExit];
-    
-    CLController = [[CLLocationController alloc] init];
-    CLController.delegate = self;
-
-    updateLocationButton.enabled = YES;
-    
-    mapScreenOnTop = YES;
-    
-    categories = [[NSArray alloc] initWithObjects:@"Arts & Crafts", @"Education", @"Entertainment", @"Family", @"Food", @"Friends", @"Landscape & View", @"Museum", @"Party", @"Professional", @"Shopping", @"Technology", @"Other", nil];
-    
-    pickerString = [categories objectAtIndex:0];
-    pickerValue = 0;
-    [super viewDidLoad];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -214,17 +203,57 @@
 - (void)didReceiveMemoryWarning
 {
     // Releases the view if it doesn't have a superview.
+    
     [super didReceiveMemoryWarning];
     
     // Release any cached data, images, etc. that aren't in use.
 }
 
+-(void)viewWillAppear:(BOOL)animated {
+    [self checkForConnection];
+    [super viewWillAppear:animated];
+}
+
+
 - (void)viewDidUnload
 {
+    [CLController release];
+    [model release];
+    
+    self.mapView = nil;
+    self.loadingView = nil;
+    self.categoriesView = nil;
+    self.containerView = nil;
+    
     [super viewDidUnload];
 
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+}
+
+// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
+- (void)viewDidLoad {
+    [self showLoadingViewWithText:@"Locating..."];
+    [self.itemLabel setReturnKeyType:UIReturnKeyDone];
+    [self.itemLabel addTarget:self
+                       action:@selector(textFieldFinished:)
+             forControlEvents:UIControlEventEditingDidEndOnExit];
+    
+    CLController = [[CLLocationController alloc] init];
+    CLController.delegate = self;
+    
+    model = [[dbModel alloc] init];
+    
+    updateLocationButton.enabled = YES;
+    
+    mapScreenOnTop = YES;
+    
+    categories = [[NSArray alloc] initWithObjects:@"Arts & Crafts", @"Education", @"Entertainment", @"Family", @"Food", @"Friends", @"Landscape & View", @"Museum", @"Party", @"Professional", @"Shopping", @"Technology", @"Other", nil];
+    
+    pickerString = [categories objectAtIndex:0];
+    pickerValue = 0;
+    
+    [super viewDidLoad];
 }
 
 -(void)dealloc {
@@ -240,6 +269,7 @@
     [pickerString release];
     [positionToBeSaved release];
     [CLController release];
+    [model release];
     [super dealloc];
 }
 

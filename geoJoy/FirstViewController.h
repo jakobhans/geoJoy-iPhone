@@ -10,6 +10,7 @@
 #import "CLLocationController.h"
 #import "annotationsController.h"
 #import "dbModel.h"
+#import "ConnectedClass.h"
 
 @interface FirstViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate, CoreLocationControllerDelegate, MKMapViewDelegate, UIAlertViewDelegate> {
     
@@ -33,10 +34,12 @@
     BOOL mapScreenOnTop;
 
     CLLocationController *CLController;
-    
     CLLocation *positionToBeSaved;
+    
+    dbModel *model;
 }
 
+@property (nonatomic, retain) dbModel *model;
 @property (nonatomic, retain) MKMapView *map;
 @property (nonatomic, retain) UIBarButtonItem *addDisplayLocationButton;
 @property (nonatomic, retain) UIButton *setCategoryButton;
