@@ -1,14 +1,14 @@
 //
-//  SecondViewController.m
+//  itemsListViewController.m
 //  geoJoy
 //
 //  Created by Jakob Hans Renpening on 22/08/11.
 //  Copyright 2011 Claim Soluciones, S.C.P. All rights reserved.
 //
 
-#import "SecondViewController.h"
+#import "itemsListViewController.h"
 
-@implementation SecondViewController
+@implementation itemsListViewController
 
 @synthesize pickerValue, geoItemsCount, categoriesCount;
 @synthesize categories;

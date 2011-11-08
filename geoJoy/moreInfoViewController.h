@@ -1,5 +1,5 @@
 //
-//  ThirdViewController.h
+//  moreInfoViewController.h
 //  geoJoy
 //
 //  Created by Jakob Hans Renpening on 22/08/11.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ConnectedClass.h"
 
-@interface ThirdViewController : UIViewController
+@interface moreInfoViewController : UIViewController
 
 -(IBAction)openRepoInSafari;
 -(IBAction)openClaimInSafari;

@@ -1,14 +1,14 @@
 //
-//  ThirdViewController.m
+//  moreInfoViewController.m
 //  geoJoy
 //
 //  Created by Jakob Hans Renpening on 22/08/11.
 //  Copyright 2011 Claim Soluciones, S.C.P. All rights reserved.
 //
 
-#import "ThirdViewController.h"
+#import "moreInfoViewController.h"
 
-@implementation ThirdViewController
+@implementation moreInfoViewController
 
 -(void)checkForConnection {
     ConnectedClass *connection = [[ConnectedClass alloc] init];

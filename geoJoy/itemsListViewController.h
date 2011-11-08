@@ -1,5 +1,5 @@
 //
-//  SecondViewController.h
+//  itemsListViewController.h
 //  geoJoy
 //
 //  Created by Jakob Hans Renpening on 22/08/11.
@@ -13,7 +13,7 @@
 #import "CLLocationController.h"
 #import "ConnectedClass.h"
 
-@interface SecondViewController : UIViewController <MKMapViewDelegate, UITableViewDelegate, UITableViewDataSource, UIPickerViewDataSource, UIPickerViewDelegate, CLLocationManagerDelegate> {
+@interface itemsListViewController : UIViewController <MKMapViewDelegate, UITableViewDelegate, UITableViewDataSource, UIPickerViewDataSource, UIPickerViewDelegate, CLLocationManagerDelegate> {
     
     IBOutlet UIView *theTableView;
     IBOutlet UIView *detailsView;

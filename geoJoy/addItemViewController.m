@@ -1,14 +1,14 @@
 //
-//  FirstViewController.m
+//  addItemViewController.m
 //  geoJoy
 //
 //  Created by Jakob Hans Renpening on 22/08/11.
 //  Copyright 2011 Claim Soluciones, S.C.P. All rights reserved.
 //
 
-#import "FirstViewController.h"
+#import "addItemViewController.h"
 
-@implementation FirstViewController
+@implementation addItemViewController
 
 @synthesize itemLabel;
 @synthesize addDisplayLocationButton;
@@ -76,6 +76,8 @@
         [setCategoryButton setTitle:@"Categories" forState:UIControlStateNormal];
         mapScreenOnTop = YES;
         
+        [self.itemLabel resignFirstResponder];
+        
         [UIView beginAnimations:nil context:self.view];
         [UIView setAnimationDuration:0.5];
         [UIView setAnimationTransition:UIViewAnimationTransitionCurlDown forView:containerView cache:YES];
@@ -85,6 +87,8 @@
     } else {
         [setCategoryButton setTitle:@"Map" forState:UIControlStateNormal];
         mapScreenOnTop = NO;
+        
+        [self.itemLabel resignFirstResponder];
         
         [UIView beginAnimations:nil context:self.view];
         [UIView setAnimationDuration:0.5];

@@ -30,14 +30,14 @@
 		42C589E21402C9D2005D259D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C589E11402C9D2005D259D /* main.m */; };
 		42C589E61402C9D2005D259D /* geoJoyAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C589E51402C9D2005D259D /* geoJoyAppDelegate.m */; };
 		42C589E91402C9D2005D259D /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42C589E71402C9D2005D259D /* MainWindow.xib */; };
-		42C589EC1402C9D2005D259D /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C589EB1402C9D2005D259D /* FirstViewController.m */; };
-		42C589EF1402C9D2005D259D /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C589EE1402C9D2005D259D /* SecondViewController.m */; };
-		42C589F21402C9D2005D259D /* FirstView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42C589F01402C9D2005D259D /* FirstView.xib */; };
-		42C589F51402C9D2005D259D /* SecondView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42C589F31402C9D2005D259D /* SecondView.xib */; };
+		42C589EC1402C9D2005D259D /* addItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C589EB1402C9D2005D259D /* addItemViewController.m */; };
+		42C589EF1402C9D2005D259D /* itemsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C589EE1402C9D2005D259D /* itemsListViewController.m */; };
+		42C589F21402C9D2005D259D /* addItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42C589F01402C9D2005D259D /* addItemView.xib */; };
+		42C589F51402C9D2005D259D /* itemsListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42C589F31402C9D2005D259D /* itemsListView.xib */; };
 		42C58A161402C9E9005D259D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42C58A151402C9E9005D259D /* CoreLocation.framework */; };
 		42C58A181402C9F0005D259D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42C58A171402C9F0005D259D /* MapKit.framework */; };
-		42C58A1C1402CA42005D259D /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C58A1A1402CA42005D259D /* ThirdViewController.m */; };
-		42C58A1D1402CA42005D259D /* ThirdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42C58A1B1402CA42005D259D /* ThirdView.xib */; };
+		42C58A1C1402CA42005D259D /* moreInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C58A1A1402CA42005D259D /* moreInfoViewController.m */; };
+		42C58A1D1402CA42005D259D /* moreInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42C58A1B1402CA42005D259D /* moreInfoView.xib */; };
 		42CFDC2A142E825300ABC9C8 /* annotationsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42CFDC29142E825300ABC9C8 /* annotationsController.m */; };
 		42CFDC2D142E836D00ABC9C8 /* CLLocationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42CFDC2C142E836D00ABC9C8 /* CLLocationController.m */; };
 		42FB0AB8142CDE0600E79FD9 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 42FB0AB7142CDE0600E79FD9 /* libsqlite3.0.dylib */; };
@@ -74,12 +74,12 @@
 		42C589E41402C9D2005D259D /* geoJoyAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = geoJoyAppDelegate.h; sourceTree = "<group>"; };
 		42C589E51402C9D2005D259D /* geoJoyAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = geoJoyAppDelegate.m; sourceTree = "<group>"; };
 		42C589E81402C9D2005D259D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
-		42C589EA1402C9D2005D259D /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		42C589EB1402C9D2005D259D /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		42C589ED1402C9D2005D259D /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		42C589EE1402C9D2005D259D /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
-		42C589F11402C9D2005D259D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FirstView.xib; sourceTree = "<group>"; };
-		42C589F41402C9D2005D259D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SecondView.xib; sourceTree = "<group>"; };
+		42C589EA1402C9D2005D259D /* addItemViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = addItemViewController.h; sourceTree = "<group>"; };
+		42C589EB1402C9D2005D259D /* addItemViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = addItemViewController.m; sourceTree = "<group>"; };
+		42C589ED1402C9D2005D259D /* itemsListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = itemsListViewController.h; sourceTree = "<group>"; };
+		42C589EE1402C9D2005D259D /* itemsListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = itemsListViewController.m; sourceTree = "<group>"; };
+		42C589F11402C9D2005D259D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/addItemView.xib; sourceTree = "<group>"; };
+		42C589F41402C9D2005D259D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/itemsListView.xib; sourceTree = "<group>"; };
 		42C589FC1402C9D2005D259D /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		42C58A051402C9D2005D259D /* geoJoyTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "geoJoyTests-Info.plist"; sourceTree = "<group>"; };
 		42C58A071402C9D2005D259D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -87,9 +87,9 @@
 		42C58A0B1402C9D2005D259D /* geoJoyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = geoJoyTests.m; sourceTree = "<group>"; };
 		42C58A151402C9E9005D259D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		42C58A171402C9F0005D259D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		42C58A191402CA42005D259D /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
-		42C58A1A1402CA42005D259D /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
-		42C58A1B1402CA42005D259D /* ThirdView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThirdView.xib; sourceTree = "<group>"; };
+		42C58A191402CA42005D259D /* moreInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = moreInfoViewController.h; sourceTree = "<group>"; };
+		42C58A1A1402CA42005D259D /* moreInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = moreInfoViewController.m; sourceTree = "<group>"; };
+		42C58A1B1402CA42005D259D /* moreInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = moreInfoView.xib; sourceTree = "<group>"; };
 		42CFDC28142E825300ABC9C8 /* annotationsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = annotationsController.h; sourceTree = "<group>"; };
 		42CFDC29142E825300ABC9C8 /* annotationsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = annotationsController.m; sourceTree = "<group>"; };
 		42CFDC2B142E836D00ABC9C8 /* CLLocationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLLocationController.h; sourceTree = "<group>"; };
@@ -172,15 +172,15 @@
 				42C589E41402C9D2005D259D /* geoJoyAppDelegate.h */,
 				42C589E51402C9D2005D259D /* geoJoyAppDelegate.m */,
 				42C589E71402C9D2005D259D /* MainWindow.xib */,
-				42C589EA1402C9D2005D259D /* FirstViewController.h */,
-				42C589EB1402C9D2005D259D /* FirstViewController.m */,
-				42C589F01402C9D2005D259D /* FirstView.xib */,
-				42C589ED1402C9D2005D259D /* SecondViewController.h */,
-				42C589EE1402C9D2005D259D /* SecondViewController.m */,
-				42C589F31402C9D2005D259D /* SecondView.xib */,
-				42C58A191402CA42005D259D /* ThirdViewController.h */,
-				42C58A1A1402CA42005D259D /* ThirdViewController.m */,
-				42C58A1B1402CA42005D259D /* ThirdView.xib */,
+				42C589EA1402C9D2005D259D /* addItemViewController.h */,
+				42C589EB1402C9D2005D259D /* addItemViewController.m */,
+				42C589F01402C9D2005D259D /* addItemView.xib */,
+				42C589ED1402C9D2005D259D /* itemsListViewController.h */,
+				42C589EE1402C9D2005D259D /* itemsListViewController.m */,
+				42C589F31402C9D2005D259D /* itemsListView.xib */,
+				42C58A191402CA42005D259D /* moreInfoViewController.h */,
+				42C58A1A1402CA42005D259D /* moreInfoViewController.m */,
+				42C58A1B1402CA42005D259D /* moreInfoView.xib */,
 				42C589DC1402C9D2005D259D /* Supporting Files */,
 			);
 			path = geoJoy;
@@ -280,9 +280,9 @@
 			files = (
 				42C589E01402C9D2005D259D /* InfoPlist.strings in Resources */,
 				42C589E91402C9D2005D259D /* MainWindow.xib in Resources */,
-				42C589F21402C9D2005D259D /* FirstView.xib in Resources */,
-				42C589F51402C9D2005D259D /* SecondView.xib in Resources */,
-				42C58A1D1402CA42005D259D /* ThirdView.xib in Resources */,
+				42C589F21402C9D2005D259D /* addItemView.xib in Resources */,
+				42C589F51402C9D2005D259D /* itemsListView.xib in Resources */,
+				42C58A1D1402CA42005D259D /* moreInfoView.xib in Resources */,
 				426E268D14052BFC00C47A26 /* bookmark.png in Resources */,
 				426E268E14052BFC00C47A26 /* bookmark@2x.png in Resources */,
 				42B350FD142CA0390099924E /* app_title.png in Resources */,
@@ -307,9 +307,9 @@
 			files = (
 				42C589E21402C9D2005D259D /* main.m in Sources */,
 				42C589E61402C9D2005D259D /* geoJoyAppDelegate.m in Sources */,
-				42C589EC1402C9D2005D259D /* FirstViewController.m in Sources */,
-				42C589EF1402C9D2005D259D /* SecondViewController.m in Sources */,
-				42C58A1C1402CA42005D259D /* ThirdViewController.m in Sources */,
+				42C589EC1402C9D2005D259D /* addItemViewController.m in Sources */,
+				42C589EF1402C9D2005D259D /* itemsListViewController.m in Sources */,
+				42C58A1C1402CA42005D259D /* moreInfoViewController.m in Sources */,
 				4206A136142DE9AE0023DBB0 /* dbModel.m in Sources */,
 				42CFDC2A142E825300ABC9C8 /* annotationsController.m in Sources */,
 				42CFDC2D142E836D00ABC9C8 /* CLLocationController.m in Sources */,
@@ -337,20 +337,20 @@
 			name = MainWindow.xib;
 			sourceTree = "<group>";
 		};
-		42C589F01402C9D2005D259D /* FirstView.xib */ = {
+		42C589F01402C9D2005D259D /* addItemView.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				42C589F11402C9D2005D259D /* en */,
 			);
-			name = FirstView.xib;
+			name = addItemView.xib;
 			sourceTree = "<group>";
 		};
-		42C589F31402C9D2005D259D /* SecondView.xib */ = {
+		42C589F31402C9D2005D259D /* itemsListView.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				42C589F41402C9D2005D259D /* en */,
 			);
-			name = SecondView.xib;
+			name = itemsListView.xib;
 			sourceTree = "<group>";
 		};
 		42C58A061402C9D2005D259D /* InfoPlist.strings */ = {
@@ -397,8 +397,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Jakob Renpening";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Jakob Renpening";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
@@ -407,8 +407,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "0200DB2A-92DB-4E22-A980-F50691DE2EA8";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "0200DB2A-92DB-4E22-A980-F50691DE2EA8";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				VALIDATE_PRODUCT = YES;

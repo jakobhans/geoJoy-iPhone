@@ -1,5 +1,5 @@
 //
-//  FirstViewController.h
+//  addItemViewController.h
 //  geoJoy
 //
 //  Created by Jakob Hans Renpening on 22/08/11.
@@ -12,7 +12,7 @@
 #import "dbModel.h"
 #import "ConnectedClass.h"
 
-@interface FirstViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate, CoreLocationControllerDelegate, MKMapViewDelegate, UIAlertViewDelegate> {
+@interface addItemViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate, CoreLocationControllerDelegate, MKMapViewDelegate, UIAlertViewDelegate> {
     
     IBOutlet UIBarButtonItem *addDisplayLocationButton;
     IBOutlet UIBarButtonItem *updateLocationButton;
